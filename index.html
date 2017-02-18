@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body ng-cloak>
+    <div class="container-fluid" ng-controller="mainController" ng-cloak>
+        <div class="row">
+            <div class="col-xs-12 nav">
+                <div class="col-sm-5 col-sm-offset-1 col-xs-10">
+                    <input type="text" ng-model="locationLookup" style="color:black; width: 200px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
+                    <a href="#!/{{ currentLocation }}/{{currentDay}}">
+                        <button class="btn btn-primary" style="margin-bottom: 4px;" ng-click="markLocation(locationLookup)">Submit</button>
+                    </a>
+                </div>
+                <div class="col-sm-4 col-xs-2 text-right" style="font-size:2em;">
+                    <a href="#!/about">About</a>
+                </div>
+            </div>
+        </div>
+        <div ng-view></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+    <script src="bower_components/skycons/skycons.js"></script>
+    <script src="bower_components/angular-skycons/angular-skycons.js"></script>
+    <script src="app.js"></script>
+    <script src="services/httpservice.js"></script>
+    <script src="components/day-view/day-view.js"></script>
+</body>
+
+</html>

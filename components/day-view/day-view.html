@@ -1,0 +1,52 @@
+<div class="row" ng-hide="currentLocation === undefined" ng-cloak>
+    <div class="col-sm-10 col-sm-offset-1 col-xs-12 border">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>{{locationOutput}}</h1>
+                <h3 style="color: white">{{output.time*1000 | date: 'longDate' }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-3 mainSummary text-center">
+                <br>
+                <p>{{output.summary}}</p>
+                <p ng-show="output.temperature">Temperature: {{output.temperature}}ºF</p>
+                <p ng-show="output.temperatureMax">High Temperature: {{output.temperatureMax}}ºF</p>
+                <p ng-show="output.temperatureMin">Low Temperature: {{output.temperatureMin}}ºF</p>
+                <p>Chance of rain: {{output.precipProbability*100 | number : 0}}%</p>
+            </div>
+            <div class="col-sm-2 text-center">
+                <skycon icon="output.icon" class="mainIcon"></skycon>
+
+            </div>
+        </div>
+        <div class="row text-center" ng-show="showHourly === true">
+            <h3>Hourly:</h3>
+            <div class="col-md-2 col-sm-4 col-xs-6 text-center hourlySummary" ng-repeat="each in hourly | limitTo:quantity">
+                <h4 style="border-bottom: 1px solid white;">{{each.time*1000 | date: 'h:mm:a'}}</h4>
+                <p>{{each.summary}}
+                    <br>
+                    <skycon icon="each.icon"></skycon>
+                    <br>{{each.temperature}}ºF
+                    <br> Chance of rain: {{each.precipProbability*100 | number : 0}}%</p>
+
+
+            </div>
+        </div>
+        <div class="row" ng-controller="mainController">
+            <div class="col-xs-12 text-center">
+                <h2>Forecast:</h2>
+                <h4> {{forecast.summary}} </h4>
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 col-xs-6 text-center" ng-repeat="daily in forecast.data | limitTo:6" style="margin-bottom: 50px;">
+                        <a href="#!/{{ currentLocation }}/{{daily.time*1000 | date: 'EEEE'}}"><h4>{{ daily.time*1000 | date: 'EEEE' }}</h4></a>
+                        <skycon icon="daily.icon"></skycon>
+                        <br> High / Low
+                        <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
+                        <br> Chance of Rain: {{daily.precipProbability*100 | number : 0}}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
