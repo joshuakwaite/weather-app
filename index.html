@@ -15,25 +15,15 @@
         <div class="row">
             <div class="col-xs-12 nav">
                 <div class="col-sm-5 col-sm-offset-1 col-xs-10">
-                    <div ng-hide="zipToggle" ng-cloak>
                     <input type="text" ng-model="locationLookup" style="color:black; width: 200px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
                     <a href="#!/{{ currentLocation }}/{{currentDay}}">
                         <button class="btn btn-primary" style="margin-bottom: 4px;" ng-click="markLocation(locationLookup)">Submit</button>
                     </a>
                 </div>
-                </div>
                 <div class="col-sm-4 col-xs-2 text-right" style="font-size:2em;">
-                    <a href="#!/about" ng-hide="zipToggle">About</a>
+                    <a href="#!/about">About</a>
                 </div>
             </div>
-        </div>
-        <div ng-show="zipToggle" ng-cloak class="text-center">
-        <input type="text" ng-model="locationLookup" style="color:black; margin-top: 100px; width: 250px; display: inline-block;" placeholder="Enter Zip or Address" class="form-control">
-        <a href="#!/{{ currentLocation }}/{{currentDay}}">
-            <br>
-            <br>
-            <button class="btn btn-success" style="margin-bottom: 4px;" ng-click="markLocation(locationLookup)">Submit</button>
-        </a>
         </div>
         <div ng-view></div>
 
