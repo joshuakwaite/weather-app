@@ -25,7 +25,7 @@ angularSkycons.directive("skycon", function () {
 
             // set default color if "color" attribute not present
             var config = {
-                color: scope.color || "white"
+                color: scope.color || "black"
             };
 
             var skycons = new Skycons(config);
@@ -81,7 +81,7 @@ angularSkycons.directive("skycon", function () {
                 } else if (scope.icon === "tornado") {
                     skycons.color = "red"
                 } else {
-                    skycons.color = "white"
+                    skycons.color = "black"
                 }
 
             }, true);

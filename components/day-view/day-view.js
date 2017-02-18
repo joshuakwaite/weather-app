@@ -4,8 +4,9 @@ app.controller("mainController", ["$scope", "httpService", "$routeParams", "$fil
 
     $scope.currentLocation;
 
-    $scope.markLocation = function (location) {
-        $scope.currentLocation = location
+    $scope.markLocation = function (x) {
+        x.zipToggle = false
+        $scope.currentLocation = x.location
     }
 
 

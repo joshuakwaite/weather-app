@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h1>{{locationOutput}}</h1>
-                <h3 style="color: white">{{output.time*1000 | date: 'longDate' }}</h3>
+                <h3 style="color: black">{{output.time*1000 | date: 'longDate' }}</h3>
             </div>
         </div>
         <div class="row">
@@ -13,6 +13,7 @@
                 <p ng-show="output.temperature">Temperature: {{output.temperature}}ºF</p>
                 <p ng-show="output.temperatureMax">High Temperature: {{output.temperatureMax}}ºF</p>
                 <p ng-show="output.temperatureMin">Low Temperature: {{output.temperatureMin}}ºF</p>
+                <p>Humidity: {{output.humidity}}</p>
                 <p>Chance of rain: {{output.precipProbability*100 | number : 0}}%</p>
             </div>
             <div class="col-sm-2 text-center">
@@ -44,6 +45,8 @@
                         <br> High / Low
                         <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
                         <br> Chance of Rain: {{daily.precipProbability*100 | number : 0}}%
+                        <br> Sunrise: {{daily.sunriseTime*1000 | date : 'h:mm:a'}}
+                        <br> Sunset: {{daily.sunsetTime*1000 | date : 'h:mm:a'}}
                     </div>
                 </div>
             </div>

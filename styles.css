@@ -4,8 +4,7 @@
 }
 
 body {
-    color: white;
-    background-image: url(images/footer_lodyas.png);
+    color: black;
     font-family: bariolReg;
 }
 
@@ -23,9 +22,6 @@ body {
     margin-top: 25px;
 }
 
-.hourlySummary  {
-    border: 1px solid white;
-}
 
 .mainSummary {
     font-size: 20px;
