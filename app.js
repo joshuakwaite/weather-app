@@ -15,7 +15,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         controller: "aboutController"
     })
         .otherwise({
-            redirectTo: "/"
+            redirectTo: "/Home"
         });
     
         
