@@ -40,7 +40,7 @@
                 <h4> {{forecast.summary}} </h4>
                 <div class="row">
                     <div class="col-md-2 col-sm-4 col-xs-6 text-center" ng-repeat="daily in forecast.data | limitTo:6" style="margin-bottom: 50px;">
-                        <a href="#!/{{ currentLocation }}/{{daily.time*1000 | date: 'EEEE'}}"><h4>{{ daily.time*1000 | date: 'EEEE' }}</h4></a>
+                        <h4>{{ daily.time*1000 | date: 'EEEE' }}</h4>
                         <skycon icon="daily.icon"></skycon>
                         <br> High / Low
                         <br> {{daily.temperatureMax}}ºF / {{daily.temperatureMin}}ºF
